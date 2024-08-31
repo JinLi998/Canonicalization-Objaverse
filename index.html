@@ -4,7 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- <link rel="stylesheet" href="css/Highlight-Clean.css">
+  <link rel="stylesheet" href="css/styles.css"> -->
   <style>
+    .gallery {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px; /* 图片和视频之间的间隔 */
+      }
+
+      .responsive {
+          max-width: 100%; /* 响应宽度 */
+          height: auto; /* 自动高度 */
+          max-height: 200px; /* 限制高度 */
+      }
       .video-container {
           display: flex;
           justify-content: center; /* 居中对齐 */
@@ -54,23 +68,58 @@
     <img src="imgs/annotation_and_eval.png" alt="描述图片" style="width:50%;">
   </div>
 
-  <!-- 可以交互 -->
-  <div class="row compositional captioned_videos">
-      <div class="col-sm-8 text">
-          <p class="selectable left" id="compositional_tags_depth_0"></p>
-      </div>
-  <div class="col-4">
-      <div class="video-compare-container" style="width: 100%">
-          <video class="video lazy" id="ex3" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
-              <source data-src="https://dreamfusion-cdn.ajayj.com/gallery/a_zoomed_out_DSLR_photo_of_Sydney_opera_house,_aerial_view_rgbdn_hq_15000.mp4" type="video/mp4"></source>
-          </video>
-          <canvas height="752" class="videoMerge" id="ex3Merge" width="1002"></canvas>
-      </div>
-      <h6 class="caption">a zoomed out DSLR photo of Sydney opera house, aerial view.</h6>
-  </div> 
-
+  <!-- 显示对齐的过程 -->
+  <div class="module" style="text-align: center;">
+  <h1>The Process of Canonicalization</h1>
+  </div>
+  <div>
+    <div class="gallery">
+        <img src="imgs\vis_alignCourse\bicycle\temp_ins_0000_combined.png" alt="图片1" class="responsive">
+        <img src="imgs\vis_alignCourse\bicycle\org_newObj_ins_1_combined.png" alt="图片2" class="responsive">
+        <img src="imgs\vis_alignCourse\bicycle\aligned_newObj_ins_1_combined.png" alt="图片3" class="responsive">
+        <video class="responsive"  autoplay muted loop>
+            <source src="imgs\vis_alignCourse\bicycle\obj_rotate_ins_1_combined.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="gallery">
+        <img src="imgs\vis_alignCourse\chair\temp_ins_0000_combined.png" alt="图片1" class="responsive">
+        <img src="imgs\vis_alignCourse\chair\org_newObj_ins_1_combined.png" alt="图片2" class="responsive">
+        <img src="imgs\vis_alignCourse\chair\aligned_newObj_ins_1_combined.png" alt="图片3" class="responsive">
+        <video class="responsive"  autoplay muted loop>
+            <source src="imgs\vis_alignCourse\chair\obj_rotate_ins_1_combined.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="gallery">
+      <img src="imgs\vis_alignCourse\giraffe\temp_ins_0000_combined.png" alt="图片1" class="responsive">
+      <img src="imgs\vis_alignCourse\giraffe\org_newObj_ins_4_combined.png" alt="图片2" class="responsive">
+      <img src="imgs\vis_alignCourse\giraffe\aligned_newObj_ins_4_combined.png" alt="图片3" class="responsive">
+      <video class="responsive"  autoplay muted loop>
+          <source src="imgs\vis_alignCourse\giraffe\obj_rotate_ins_4_combined.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="gallery">
+      <img src="imgs\vis_alignCourse\rifle\temp_ins_0000_combined.png" alt="图片1" class="responsive">
+      <img src="imgs\vis_alignCourse\rifle\org_newObj_ins_1_combined.png" alt="图片2" class="responsive">
+      <img src="imgs\vis_alignCourse\rifle\aligned_newObj_ins_1_combined.png" alt="图片3" class="responsive">
+      <video class="responsive"  autoplay muted loop>
+          <source src="imgs\vis_alignCourse\rifle\obj_rotate_ins_1_combined.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="gallery">
+      <img src="imgs\vis_alignCourse\shoulder_bag\temp_ins_0000_combined.png" alt="图片1" class="responsive">
+      <img src="imgs\vis_alignCourse\shoulder_bag\org_newObj_ins_0_combined.png" alt="图片2" class="responsive">
+      <img src="imgs\vis_alignCourse\shoulder_bag\aligned_newObj_ins_0_combined.png" alt="图片3" class="responsive">
+      <video class="responsive"  autoplay muted loop>
+          <source src="imgs\vis_alignCourse\shoulder_bag\obj_rotate_ins_0_combined.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  
 
   <!-- 大量canonicalization可视化 -->
+  <div class="module" style="text-align: center;">
+    <h1>Presentation of Canonicalization model</h1>
+  </div>
   <div>
     <div class="video-container">
         <video src="videos/race_car/0.mp4" autoplay loop muted></video>
@@ -169,14 +218,6 @@
     </div>
 
     <div class="video-container">
-        <video src="videos/table_lamp/0.mp4" autoplay loop muted></video>
-        <video src="videos/table_lamp/1.mp4" autoplay loop muted></video>
-        <video src="videos/table_lamp/2.mp4" autoplay loop muted></video>
-        <video src="videos/table_lamp/3.mp4" autoplay loop muted></video>
-        <video src="videos/table_lamp/4.mp4" autoplay loop muted></video>
-    </div>
-
-    <div class="video-container">
         <video src="videos/tapestry/0.mp4" autoplay loop muted></video>
         <video src="videos/tapestry/1.mp4" autoplay loop muted></video>
         <video src="videos/tapestry/2.mp4" autoplay loop muted></video>
@@ -219,7 +260,17 @@
 
   
         
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          // 获取所有视频元素
+          const videos = document.querySelectorAll('video');
 
+          // 遍历每个视频并同时播放
+          videos.forEach(video => {
+              video.play();
+          });
+      });
+  </script>
   <script src="js/yall.js"></script>
     <script>
         yall(
