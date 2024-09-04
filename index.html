@@ -46,6 +46,27 @@
         </div>
     </div>
 
+    <!-- 对齐前后的交互 -->
+    <div class="container" style="max-width: 768px; margin-bottom: 40px; width: 100%;">
+        <h3 class="center-text"><b>Comparison of Object and Semantic States Before and After Canonicalization</b></h3>
+        <h6 class="caption">Something</h6>
+        <div class="video-compare-container" style="width: 100%">
+            <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                <source data-src="videos/alignedCourse/foal/high350_resized_objBeforeAfter.mp4" type="video/mp4"></source>
+            </video>
+            <canvas height="752" class="videoMerge" id="ex1Merge" width="1002"></canvas>
+        </div>
+
+        <div class="video-compare-container" style="width: 100%">
+                <video class="video lazy" id="ex2" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                    <source data-src="videos/alignedCourse/foal/high350_resized_semanticBeforeAfter.mp4" type="video/mp4"></source>
+                </video>
+                <canvas height="752" class="videoMerge" id="ex2Merge" width="1002"></canvas>
+        </div>
+    </div>
+
+
+
     <!-- 对齐的过程 -->
     <hr class="divider" />
     <div class="container" style="max-width: 768px; margin-bottom: 40px; width: 100%;">

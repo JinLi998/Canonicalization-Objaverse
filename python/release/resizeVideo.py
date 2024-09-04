@@ -2,7 +2,7 @@ import os
 from moviepy.editor import VideoFileClip
 from glob import glob
 
-def resize_videos_in_directory(directory, target_width=4880):
+def resize_videos_in_directory(directory, output_path, target_width=4880):
     # 如果directory是mp4文件，直接处理
     if directory.endswith('.mp4'):
         video_files = [directory]
@@ -23,9 +23,6 @@ def resize_videos_in_directory(directory, target_width=4880):
             # 调整视频大小
             resized_clip = clip.resize(width=target_width)
 
-            # 生成输出文件路径，在当前文件夹中以 'resized_' 为前缀保存
-            output_path = os.path.join(os.path.dirname(file_path), f"resized_{os.path.basename(file_path)}")
-
             # 保存调整后的视频
             resized_clip.write_videofile(output_path, codec="libx264")
 
@@ -45,8 +42,8 @@ if __name__ == "__main__":
     data_root = 'videos/alignedCourse'
     # 用glob获得包括子文件夹中所有的mp4文件
     files = glob(os.path.join(data_root, "**", "*.mp4"), recursive=True)
-    # 选出包含resized_obj_semantic_clip的文件
-    files = [f for f in files if "resized_obj_semantic_clip" in f]
+    # resized_objBeforeAfter  resized_semanticBeforeAfter
+    files = [f for f in files if "resized_objBeforeAfter" in f or "resized_semanticBeforeAfter" in f]
     # 遍历文件
     for file in files:
         # 获取文件名
@@ -56,5 +53,6 @@ if __name__ == "__main__":
 
         # 调用函数
         file = file.replace("\\", "/")
-        # output_path = output_path.replace("\\", "/")
-        resize_videos_in_directory(file, target_width=1772)
+        # 生成输出文件路径，在当前文件夹中以 'resized_' 为前缀保存
+        output_path = os.path.join(os.path.dirname(file), f"high350_{os.path.basename(file)}")
+        resize_videos_in_directory(file, output_path, target_width=1772)
