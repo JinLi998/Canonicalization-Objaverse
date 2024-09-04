@@ -1,6 +1,6 @@
 import os
 from moviepy.editor import VideoFileClip
-import glob
+from glob import glob
 
 def resize_videos_in_directory(directory, target_width=4880):
     # 如果directory是mp4文件，直接处理
@@ -38,7 +38,23 @@ def resize_videos_in_directory(directory, target_width=4880):
         except Exception as e:
             print(f"Error processing {file_path}: {e}")
 
-# if __name__ == "__main__":
-#     # 使用方法，指定文件夹路径
-#     directory_path = "E:/projects/Canonicalization-Objaverse/result/alignedCourse/secondBatch_video"
-#     resize_videos_in_directory(directory_path)
+if __name__ == "__main__":
+    # 使用方法，指定文件夹路径
+    # directory_path = "E:/projects/Canonicalization-Objaverse/result/alignedCourse/secondBatch_video"
+    # resize_videos_in_directory(directory_path)
+    data_root = 'videos/alignedCourse'
+    # 用glob获得包括子文件夹中所有的mp4文件
+    files = glob(os.path.join(data_root, "**", "*.mp4"), recursive=True)
+    # 选出包含resized_obj_semantic_clip的文件
+    files = [f for f in files if "resized_obj_semantic_clip" in f]
+    # 遍历文件
+    for file in files:
+        # 获取文件名
+        file_name = os.path.basename(file)
+        # 获取文件夹名
+        folder_name = os.path.basename(os.path.dirname(file))
+
+        # 调用函数
+        file = file.replace("\\", "/")
+        # output_path = output_path.replace("\\", "/")
+        resize_videos_in_directory(file, target_width=1772)

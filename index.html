@@ -22,21 +22,18 @@
 
     <script src="js/video_comparison.js"></script>
     <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script>
+
+    <style>
+        .center-text {
+          text-align: center;
+        }
+      </style>
 </head>
 
 <body>
     <div class="highlight-clean" style="padding-bottom: 10px;">
         <div class="container" style="max-width: 768px;">
             <h1 class="text-center"><b>Canonicalization Objaverse LIVS</b></h1>
-        </div>
-    </div>
-
-    <hr class="divider" />
-    <div class="container" style="max-width: 768px;">
-        <!-- 比较 -->
-        <div style="text-align: center;">
-            <h3><b>Statistics and Distribution</b></h3>
-            <img src="imgs/statistics_cates_num_plan.png" alt="描述图片" style="width:100%;">
         </div>
     </div>
 
@@ -49,49 +46,97 @@
         </div>
     </div>
 
+    <!-- 对齐的过程 -->
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px; margin-bottom: 40px; width: 100%;">
+        <h3 class="center-text"><b>Canonicalization Process</b></h3>
+        <h6 class="caption">Category: "banana"</h6>
+        <div class="video-compare-container" style="width: 95%">
+            <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay 
+               style="width: 100%; height: auto; display: block;">
+            <source data-src="videos/alignedCourse/banana/resized_resized_obj_semantic_clip.mp4" type="video/mp4">
+        </video>
+        </div>
+
+        <h6 class="caption">Category: "bass_horn"</h6>
+        <div class="video-compare-container" style="width: 95%">
+            <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay 
+               style="width: 100%; height: auto; display: block;">
+            <source data-src="videos/alignedCourse/bass_horn/resized_resized_obj_semantic_clip.mp4" type="video/mp4">
+        </video>
+        </div>
+
+        <h6 class="caption">Category: "bicycle"</h6>
+        <div class="video-compare-container" style="width: 95%">
+            <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay 
+               style="width: 100%; height: auto; display: block;">
+            <source data-src="videos/alignedCourse/bicycle/resized_resized_obj_semantic_clip.mp4" type="video/mp4">
+        </video>
+        </div>
+
+        <h6 class="caption">Category: "fighter_jet"</h6>
+        <div class="video-compare-container" style="width: 95%">
+            <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay 
+               style="width: 100%; height: auto; display: block;">
+            <source data-src="videos/alignedCourse/fighter_jet/resized_resized_obj_semantic_clip.mp4" type="video/mp4">
+        </video>
+        </div>
+
+        <h6 class="caption">Category: "foal"</h6>
+        <div class="video-compare-container" style="width: 95%">
+            <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay 
+               style="width: 100%; height: auto; display: block;">
+            <source data-src="videos/alignedCourse/foal/resized_resized_obj_semantic_clip.mp4" type="video/mp4">
+        </video>
+        </div>
+
+        <h6 class="caption">Category: "gun"</h6>
+        <div class="video-compare-container" style="width: 95%">
+            <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay 
+               style="width: 100%; height: auto; display: block;">
+            <source data-src="videos/alignedCourse/gun/resized_resized_obj_semantic_clip.mp4" type="video/mp4">
+        </video>
+        </div>
+
+        <h6 class="caption">Category: "pocket_watch"</h6>
+        <div class="video-compare-container" style="width: 95%">
+            <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay 
+               style="width: 100%; height: auto; display: block;">
+            <source data-src="videos/alignedCourse/pocket_watch/resized_resized_obj_semantic_clip.mp4" type="video/mp4">
+        </video>
+        </div>
+
+        <h6 class="caption">Category: "shears"</h6>
+        <div class="video-compare-container" style="width: 95%">
+            <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay 
+               style="width: 100%; height: auto; display: block;">
+            <source data-src="videos/alignedCourse/shears/resized_resized_obj_semantic_clip.mp4" type="video/mp4">
+        </video>
+        </div>
+    </div>
+
+    <!-- 标注和评估 -->
     <hr class="divider" />
     <div class="container" style="max-width: 768px; margin-bottom: 40px;">
         <!-- 手动标注和评估 -->
+        <h3 class="center-text"><b>Part Manual Annotation and Evaluation</b></h3>
+        <h5>
+            To validate the quality of our method's canonicalization, we manually annotated <span style="color: red; font-weight: bold;">487</span> categories, comprising approximately <span style="color: red; font-weight: bold;">1.9w</span> objects. Among them, <span style="color: red; font-weight: bold;">81%</span> were successfully canonicalized, <span style="color: red; font-weight: bold;">9%</span> were unsuccessfully canonicalized, and <span style="color: red; font-weight: bold;">10%</span> were noise data.
+          </h5>
         <div style="text-align: center;">
-            <h3><b>Part Manual Annotation and Evaluation</b></h3>
             <img src="imgs/annotation_and_eval.png" alt="描述图片" style="width:100%;">
         </div>
     </div>
+
+    <!-- 和之前数据集的比较 -->
     <hr class="divider" />
-    <!-- <div class="container" style="max-width: 768px;">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Composing objects into a scene</h2>
-                <video class="video lazy" autoplay loop playsinline controls muted poster="https://dreamfusion-cdn.ajayj.com/carouselx24_128tall.jpg">
-                    <source src="https://dreamfusion-cdn.ajayj.com/carouselx24_128tall.mp4" type="video/mp4"></source>
-                </video>
-            </div>
+    <div class="container" style="max-width: 768px;">
+        <!-- 比较 -->
+        <div style="text-align: center;">
+            <h3><b>Statistics and Distribution</b></h3>
+            <!-- <img src="imgs/statistics_cates_num_plan.png" alt="描述图片" style="width:100%;"> -->
+            <img src="imgs/compare.png" alt="描述图片" style="width:100%;">
         </div>
-    </div>
-    <hr class="divider" /> -->
-    
-    <div class="container" style="max-width: 768px; margin-bottom: 40px; width: 100%;">
-        <h6 class="caption">Something</h6>
-        <div class="video-compare-container" style="width: 100%">
-            <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
-                <source data-src="videos/alignedCourse/banana/resized_obj_semantic.mp4" type="video/mp4"></source>
-            </video>
-            <canvas height="752" class="videoMerge" id="ex1Merge" width="1002"></canvas>
-        </div>
-        <!-- <h6 class="caption">Something</h6>
-        <div class="video-compare-container" style="width: 100%">
-            <video class="video lazy" id="ex2" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
-                <source data-src="videos/alignedCourse/banana/resized_obj_semantic.mp4" type="video/mp4"></source>
-            </video>
-            <canvas height="752" class="videoMerge" id="ex2Merge" width="1002"></canvas>
-        </div>
-        <h6 class="caption">Something</h6>
-        <div class="video-compare-container" style="width: 100%">
-            <video class="video lazy" id="ex3" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
-                <source data-src="videos/alignedCourse/banana/resized_obj_semantic.mp4" type="video/mp4"></source>
-            </video>
-            <canvas height="752" class="videoMerge" id="ex3Merge" width="1002"></canvas>
-        </div> -->
     </div>
 
 
