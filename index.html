@@ -25,8 +25,9 @@
           align-items: center;
           gap: 10px; /* 视频间的间距 */
           flex-wrap: nowrap; /* 禁止换行 */
-          padding: 10px;
+          padding: 15px;
           box-sizing: border-box;
+          
       }
       video {
           max-width: 18%;
@@ -69,51 +70,74 @@
   </div>
 
   <!-- 显示对齐的过程 -->
-  <div class="module" style="text-align: center;">
-  <h1>The Process of Canonicalization</h1>
-  </div>
-  <div>
-    <div class="gallery">
-        <img src="imgs\vis_alignCourse\bicycle\temp_ins_0000_combined.png" alt="图片1" class="responsive">
-        <img src="imgs\vis_alignCourse\bicycle\org_newObj_ins_4_combined.png" alt="图片2" class="responsive">
-        <img src="imgs\vis_alignCourse\bicycle\aligned_newObj_ins_4_combined.png" alt="图片3" class="responsive">
-        <video class="responsive"  autoplay muted loop>
-            <source src="imgs\vis_alignCourse\bicycle\obj_rotate_ins_4_combined.mp4" type="video/mp4">
-        </video>
+    <div class="module" style="text-align: center;">
+    <h1>Presentation of Canonicalization model</h1>
     </div>
-    <div class="gallery">
-        <img src="imgs\vis_alignCourse\chair\temp_ins_0000_combined.png" alt="图片1" class="responsive">
-        <img src="imgs\vis_alignCourse\chair\org_newObj_ins_1_combined.png" alt="图片2" class="responsive">
-        <img src="imgs\vis_alignCourse\chair\aligned_newObj_ins_1_combined.png" alt="图片3" class="responsive">
-        <video class="responsive"  autoplay muted loop>
-            <source src="imgs\vis_alignCourse\chair\obj_rotate_ins_1_combined.mp4" type="video/mp4">
-        </video>
+    <!-- 对其过程 -->
+     
+    <div>
+        <!-- 1. obj -->
+        <div class="video-container">
+            <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                <source data-src="videos\alignedCourse\banana\resized_objBeforeAfter.mp4" type="video/mp4"></source>
+            </video>
+            <canvas height="300" class="videoMerge" id="ex1Merge" width="1002"></canvas>
+
+            <video class="video lazy" id="ex2" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                <source data-src="videos\alignedCourse\bass_horn\resized_objBeforeAfter.mp4" type="video/mp4"></source>
+            </video>
+            <canvas height="300" class="videoMerge" id="ex2Merge" width="1002"></canvas>
+
+            <!-- <video class="video lazy" id="ex3" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                <source data-src="videos\alignedCourse\bicycle\resized_objBeforeAfter.mp4" type="video/mp4"></source>
+            </video>
+            <canvas height="300" class="videoMerge" id="ex3Merge" width="1002"></canvas> -->
+
+            
+        </div>
+        <!-- 2. semantic -->
+        <div class="video-container">
+            <video class="video lazy" id="ex4" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                <source data-src="videos\alignedCourse\banana\resized_semanticBeforeAfter.mp4" type="video/mp4"></source>
+            </video>
+            <canvas height="300" class="videoMerge" id="ex4Merge" width="1002"></canvas>
+
+            <video class="video lazy" id="ex5" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                <source data-src="videos\alignedCourse\bass_horn\resized_semanticBeforeAfter.mp4" type="video/mp4"></source>
+            </video>
+            <canvas height="300" class="videoMerge" id="ex5Merge" width="1002"></canvas>
+
+            <!-- <video class="video lazy" id="ex6" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                <source data-src="videos\alignedCourse\bicycle\resized_semanticBeforeAfter.mp4" type="video/mp4"></source>
+            </video>
+            <canvas height="300" class="videoMerge" id="ex6Merge" width="1002"></canvas> -->
+        </div>
+        <!-- 3. obj_semantic -->
+        <div class="video-container">
+            <video class="video lazy" id="ex7" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                <source data-src="videos\alignedCourse\banana\resized_obj_semantic.mp4" type="video/mp4"></source>
+            </video>
+            <canvas height="300" class="videoMerge" id="ex7Merge" width="1002"></canvas>
+
+            <video class="video lazy" id="ex8" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                <source data-src="videos\alignedCourse\bass_horn\resized_obj_semantic.mp4" type="video/mp4"></source>
+            </video>
+            <canvas height="300" class="videoMerge" id="ex8Merge" width="1002"></canvas>
+
+            <!-- <video class="video lazy" id="ex9" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                <source data-src="videos\alignedCourse\bicycle\resized_obj_semantic.mp4" type="video/mp4"></source>
+            </video>
+            <canvas height="300" class="videoMerge" id="ex9Merge" width="1002"></canvas> -->
+        </div>
     </div>
-    <div class="gallery">
-      <img src="imgs\vis_alignCourse\giraffe\temp_ins_0000_combined.png" alt="图片1" class="responsive">
-      <img src="imgs\vis_alignCourse\giraffe\org_newObj_ins_4_combined.png" alt="图片2" class="responsive">
-      <img src="imgs\vis_alignCourse\giraffe\aligned_newObj_ins_4_combined.png" alt="图片3" class="responsive">
-      <video class="responsive"  autoplay muted loop>
-          <source src="imgs\vis_alignCourse\giraffe\obj_rotate_ins_4_combined.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="gallery">
-      <img src="imgs\vis_alignCourse\rifle\temp_ins_0000_combined.png" alt="图片1" class="responsive">
-      <img src="imgs\vis_alignCourse\rifle\org_newObj_ins_1_combined.png" alt="图片2" class="responsive">
-      <img src="imgs\vis_alignCourse\rifle\aligned_newObj_ins_1_combined.png" alt="图片3" class="responsive">
-      <video class="responsive"  autoplay muted loop>
-          <source src="imgs\vis_alignCourse\rifle\obj_rotate_ins_1_combined.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="gallery">
-      <img src="imgs\vis_alignCourse\shoulder_bag\temp_ins_0000_combined.png" alt="图片1" class="responsive">
-      <img src="imgs\vis_alignCourse\shoulder_bag\org_newObj_ins_0_combined.png" alt="图片2" class="responsive">
-      <img src="imgs\vis_alignCourse\shoulder_bag\aligned_newObj_ins_0_combined.png" alt="图片3" class="responsive">
-      <video class="responsive"  autoplay muted loop>
-          <source src="imgs\vis_alignCourse\shoulder_bag\obj_rotate_ins_0_combined.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
+
+
+
+
+
+
+
+
   
 
   <!-- 大量canonicalization可视化 -->
@@ -122,140 +146,54 @@
   </div>
   <div>
     <div class="video-container">
-        <video src="videos/race_car/0.mp4" autoplay loop muted></video>
-        <video src="videos/race_car/1.mp4" autoplay loop muted></video>
-        <video src="videos/race_car/2.mp4" autoplay loop muted></video>
-        <video src="videos/race_car/3.mp4" autoplay loop muted></video>
-        <video src="videos/race_car/4.mp4" autoplay loop muted></video>
+        <video src="videos/alignedObjs/rabbit/resized_concat.mp4" autoplay loop muted></video>
     </div>
-
     <div class="video-container">
-        <video src="videos/raincoat/0.mp4" autoplay loop muted></video>
-        <video src="videos/raincoat/1.mp4" autoplay loop muted></video>
-        <video src="videos/raincoat/2.mp4" autoplay loop muted></video>
-        <video src="videos/raincoat/3.mp4" autoplay loop muted></video>
-        <video src="videos/raincoat/4.mp4" autoplay loop muted></video>
+        <video src="videos/alignedObjs/race_car/resized_concat.mp4" autoplay loop muted></video>
     </div>
-
     <div class="video-container">
-        <video src="videos/record_player/0.mp4" autoplay loop muted></video>
-        <video src="videos/record_player/1.mp4" autoplay loop muted></video>
-        <video src="videos/record_player/2.mp4" autoplay loop muted></video>
-        <video src="videos/record_player/3.mp4" autoplay loop muted></video>
-        <video src="videos/record_player/4.mp4" autoplay loop muted></video>
+        <video src="videos/alignedObjs/raincoat/resized_concat.mp4" autoplay loop muted></video>
     </div>
-
     <div class="video-container">
-        <video src="videos/ring/0.mp4" autoplay loop muted></video>
-        <video src="videos/ring/1.mp4" autoplay loop muted></video>
-        <video src="videos/ring/2.mp4" autoplay loop muted></video>
-        <video src="videos/ring/3.mp4" autoplay loop muted></video>
-        <video src="videos/ring/4.mp4" autoplay loop muted></video>
+        <video src="videos/alignedObjs/record_player/resized_concat.mp4" autoplay loop muted></video>
     </div>
-
     <div class="video-container">
-        <video src="videos/shears/0.mp4" autoplay loop muted></video>
-        <video src="videos/shears/1.mp4" autoplay loop muted></video>
-        <video src="videos/shears/2.mp4" autoplay loop muted></video>
-        <video src="videos/shears/3.mp4" autoplay loop muted></video>
-        <video src="videos/shears/4.mp4" autoplay loop muted></video>
+        <video src="videos/alignedObjs/ring/resized_concat.mp4" autoplay loop muted></video>
     </div>
-
     <div class="video-container">
-        <video src="videos/shepherd_dog/0.mp4" autoplay loop muted></video>
-        <video src="videos/shepherd_dog/1.mp4" autoplay loop muted></video>
-        <video src="videos/shepherd_dog/2.mp4" autoplay loop muted></video>
-        <video src="videos/shepherd_dog/3.mp4" autoplay loop muted></video>
-        <video src="videos/shepherd_dog/4.mp4" autoplay loop muted></video>
+        <video src="videos/alignedObjs/shears/resized_concat.mp4" autoplay loop muted></video>
     </div>
-
     <div class="video-container">
-        <video src="videos/shield/0.mp4" autoplay loop muted></video>
-        <video src="videos/shield/1.mp4" autoplay loop muted></video>
-        <video src="videos/shield/2.mp4" autoplay loop muted></video>
-        <video src="videos/shield/3.mp4" autoplay loop muted></video>
-        <video src="videos/shield/4.mp4" autoplay loop muted></video>
+        <video src="videos/alignedObjs/shepherd_dog/resized_concat.mp4" autoplay loop muted></video>
     </div>
-
     <div class="video-container">
-        <video src="videos/shoe/0.mp4" autoplay loop muted></video>
-        <video src="videos/shoe/1.mp4" autoplay loop muted></video>
-        <video src="videos/shoe/2.mp4" autoplay loop muted></video>
-        <video src="videos/shoe/3.mp4" autoplay loop muted></video>
-        <video src="videos/shoe/4.mp4" autoplay loop muted></video>
+        <video src="videos/alignedObjs/shield/resized_concat.mp4" autoplay loop muted></video>
     </div>
-
     <div class="video-container">
-        <video src="videos/shopping_cart/0.mp4" autoplay loop muted></video>
-        <video src="videos/shopping_cart/1.mp4" autoplay loop muted></video>
-        <video src="videos/shopping_cart/2.mp4" autoplay loop muted></video>
-        <video src="videos/shopping_cart/3.mp4" autoplay loop muted></video>
-        <video src="videos/shopping_cart/4.mp4" autoplay loop muted></video>
+        <video src="videos/alignedObjs/shoe/resized_concat.mp4" autoplay loop muted></video>
     </div>
-
     <div class="video-container">
-        <video src="videos/sink/0.mp4" autoplay loop muted></video>
-        <video src="videos/sink/1.mp4" autoplay loop muted></video>
-        <video src="videos/sink/2.mp4" autoplay loop muted></video>
-        <video src="videos/sink/3.mp4" autoplay loop muted></video>
-        <video src="videos/sink/4.mp4" autoplay loop muted></video>
+        <video src="videos/alignedObjs/shopping_cart/resized_concat.mp4" autoplay loop muted></video>
     </div>
-
     <div class="video-container">
-        <video src="videos/skateboard/0.mp4" autoplay loop muted></video>
-        <video src="videos/skateboard/1.mp4" autoplay loop muted></video>
-        <video src="videos/skateboard/2.mp4" autoplay loop muted></video>
-        <video src="videos/skateboard/3.mp4" autoplay loop muted></video>
-        <video src="videos/skateboard/4.mp4" autoplay loop muted></video>
+        <video src="videos/alignedObjs/sink/resized_concat.mp4" autoplay loop muted></video>
     </div>
-
     <div class="video-container">
-        <video src="videos/squirrel/0.mp4" autoplay loop muted></video>
-        <video src="videos/squirrel/1.mp4" autoplay loop muted></video>
-        <video src="videos/squirrel/2.mp4" autoplay loop muted></video>
-        <video src="videos/squirrel/3.mp4" autoplay loop muted></video>
-        <video src="videos/squirrel/4.mp4" autoplay loop muted></video>
+        <video src="videos/alignedObjs/skateboard/resized_concat.mp4" autoplay loop muted></video>
     </div>
-
     <div class="video-container">
-        <video src="videos/tapestry/0.mp4" autoplay loop muted></video>
-        <video src="videos/tapestry/1.mp4" autoplay loop muted></video>
-        <video src="videos/tapestry/2.mp4" autoplay loop muted></video>
-        <video src="videos/tapestry/3.mp4" autoplay loop muted></video>
-        <video src="videos/tapestry/4.mp4" autoplay loop muted></video>
+        <video src="videos/alignedObjs/squirrel/resized_concat.mp4" autoplay loop muted></video>
     </div>
-
     <div class="video-container">
-        <video src="videos/trailer_truck/0.mp4" autoplay loop muted></video>
-        <video src="videos/trailer_truck/1.mp4" autoplay loop muted></video>
-        <video src="videos/trailer_truck/2.mp4" autoplay loop muted></video>
-        <video src="videos/trailer_truck/3.mp4" autoplay loop muted></video>
-        <video src="videos/trailer_truck/4.mp4" autoplay loop muted></video>
+        <video src="videos/alignedObjs/tapestry/resized_concat.mp4" autoplay loop muted></video>
     </div>
-
     <div class="video-container">
-        <video src="videos/vodka/0.mp4" autoplay loop muted></video>
-        <video src="videos/vodka/1.mp4" autoplay loop muted></video>
-        <video src="videos/vodka/2.mp4" autoplay loop muted></video>
-        <video src="videos/vodka/3.mp4" autoplay loop muted></video>
-        <video src="videos/vodka/4.mp4" autoplay loop muted></video>
+        <video src="videos/alignedObjs/trailer_truck/resized_concat.mp4" autoplay loop muted></video>
     </div>
-
     <div class="video-container">
-        <video src="videos/wall_socket/0.mp4" autoplay loop muted></video>
-        <video src="videos/wall_socket/1.mp4" autoplay loop muted></video>
-        <video src="videos/wall_socket/2.mp4" autoplay loop muted></video>
-        <video src="videos/wall_socket/3.mp4" autoplay loop muted></video>
-        <video src="videos/wall_socket/4.mp4" autoplay loop muted></video>
+        <video src="videos/alignedObjs/vodka/resized_concat.mp4" autoplay loop muted></video>
     </div>
-
-    <div class="video-container">
-        <video src="videos/rabbit/0.mp4" autoplay loop muted></video>
-        <video src="videos/rabbit/1.mp4" autoplay loop muted></video>
-        <video src="videos/rabbit/2.mp4" autoplay loop muted></video>
-        <video src="videos/rabbit/3.mp4" autoplay loop muted></video>
-        <video src="videos/rabbit/4.mp4" autoplay loop muted></video>
-    </div>
+    
   </div>
 
   
@@ -285,3 +223,27 @@
 </body>
 
 </html>
+
+
+
+
+    <!-- <div>
+        <div class="video-container">
+            <video class="video lazy" id="ex4" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                <source data-src="videos\alignedCourse\bass_horn\resized_objBeforeAfter.mp4" type="video/mp4"></source>
+            </video>
+            <canvas height="300" class="videoMerge" id="ex4Merge" width="1002"></canvas>
+        </div>
+        <div class="video-container">
+            <video class="video lazy" id="ex5" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                <source data-src="videos\alignedCourse\bass_horn\resized_semanticBeforeAfter.mp4" type="video/mp4"></source>
+            </video>
+            <canvas height="300" class="videoMerge" id="ex5Merge" width="1002"></canvas>
+        </div>
+        <div class="video-container">
+            <video class="video lazy" id="ex6" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                <source data-src="videos\alignedCourse\bass_horn\resized_obj_semantic.mp4" type="video/mp4"></source>
+            </video>
+            <canvas height="300" class="videoMerge" id="ex6Merge" width="1002"></canvas>
+        </div>
+    </div> -->

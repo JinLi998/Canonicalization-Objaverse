@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="css/Highlight-Clean.css">
+  <link rel="stylesheet" href="css/styles.css"> -->
+  <style>
+    .gallery {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px; /* 图片和视频之间的间隔 */
+      }
+
+      .responsive {
+          max-width: 100%; /* 响应宽度 */
+          height: auto; /* 自动高度 */
+          max-height: 200px; /* 限制高度 */
+      }
+      .video-container {
+          display: flex;
+          justify-content: center; /* 居中对齐 */
+          align-items: center;
+          gap: 10px; /* 视频间的间距 */
+          flex-wrap: nowrap; /* 禁止换行 */
+          padding: 10px;
+          box-sizing: border-box;
+      }
+      video {
+          max-width: 18%;
+          height: auto;
+      }
+  </style>
+
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+  <script src="js/video_comparison.js"></script>
+</head>
+
+
+<body>
+
+  <!-- 大标题 -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container"></div>
+    <!-- <img src="img/oo3d_teaser.gif" style="width:30%; margin-right:0px; margin-top:0px;"> -->
+    <h1 class="nerf_title_v2" style="text-align: center;">Canonicalization Objaverse LIVS</h1>
+  </div>
+
+<hr>
+
+  <!-- 比较 -->
+  <div class="module" style="text-align: center;">
+    <h1>Statistics and Distribution</h1>
+    <img src="imgs/statistics_cates_num_plan.png" alt="描述图片" style="width:50%;">
+  </div>
+
+  <!-- 自动的方法 -->
+  <div class="module" style="text-align: center;">
+    <h1>Automatic 3D Object Canonicalization Pipeline</h1>
+    <img src="imgs/method_pipline.png" alt="描述图片" style="width:50%;">
+  </div>
+
+  <!-- 手动标注和评估 -->
+  <div class="module" style="text-align: center;">
+    <h1>Part Manual Annotation and Evaluation</h1>
+    <img src="imgs/annotation_and_eval.png" alt="描述图片" style="width:50%;">
+  </div>
+
+  <!-- 显示对齐的过程 -->
+  <div class="module" style="text-align: center;">
+  <h1>The Process of Canonicalization</h1>
+  </div>
+  <div>
+    <div class="gallery">
+        <img src="imgs\vis_alignCourse\bicycle\temp_ins_0000_combined.png" alt="图片1" class="responsive">
+        <img src="imgs\vis_alignCourse\bicycle\org_newObj_ins_4_combined.png" alt="图片2" class="responsive">
+        <img src="imgs\vis_alignCourse\bicycle\aligned_newObj_ins_4_combined.png" alt="图片3" class="responsive">
+        <video class="responsive"  autoplay muted loop>
+            <source src="imgs\vis_alignCourse\bicycle\obj_rotate_ins_4_combined.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="gallery">
+        <img src="imgs\vis_alignCourse\chair\temp_ins_0000_combined.png" alt="图片1" class="responsive">
+        <img src="imgs\vis_alignCourse\chair\org_newObj_ins_1_combined.png" alt="图片2" class="responsive">
+        <img src="imgs\vis_alignCourse\chair\aligned_newObj_ins_1_combined.png" alt="图片3" class="responsive">
+        <video class="responsive"  autoplay muted loop>
+            <source src="imgs\vis_alignCourse\chair\obj_rotate_ins_1_combined.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="gallery">
+      <img src="imgs\vis_alignCourse\giraffe\temp_ins_0000_combined.png" alt="图片1" class="responsive">
+      <img src="imgs\vis_alignCourse\giraffe\org_newObj_ins_4_combined.png" alt="图片2" class="responsive">
+      <img src="imgs\vis_alignCourse\giraffe\aligned_newObj_ins_4_combined.png" alt="图片3" class="responsive">
+      <video class="responsive"  autoplay muted loop>
+          <source src="imgs\vis_alignCourse\giraffe\obj_rotate_ins_4_combined.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="gallery">
+      <img src="imgs\vis_alignCourse\rifle\temp_ins_0000_combined.png" alt="图片1" class="responsive">
+      <img src="imgs\vis_alignCourse\rifle\org_newObj_ins_1_combined.png" alt="图片2" class="responsive">
+      <img src="imgs\vis_alignCourse\rifle\aligned_newObj_ins_1_combined.png" alt="图片3" class="responsive">
+      <video class="responsive"  autoplay muted loop>
+          <source src="imgs\vis_alignCourse\rifle\obj_rotate_ins_1_combined.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="gallery">
+      <img src="imgs\vis_alignCourse\shoulder_bag\temp_ins_0000_combined.png" alt="图片1" class="responsive">
+      <img src="imgs\vis_alignCourse\shoulder_bag\org_newObj_ins_0_combined.png" alt="图片2" class="responsive">
+      <img src="imgs\vis_alignCourse\shoulder_bag\aligned_newObj_ins_0_combined.png" alt="图片3" class="responsive">
+      <video class="responsive"  autoplay muted loop>
+          <source src="imgs\vis_alignCourse\shoulder_bag\obj_rotate_ins_0_combined.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  
+
+  <!-- 大量canonicalization可视化 -->
+  <div class="module" style="text-align: center;">
+    <h1>Presentation of Canonicalization model</h1>
+  </div>
+  <div>
+    <div class="video-container">
+        <video src="videos/race_car/0.mp4" autoplay loop muted></video>
+        <video src="videos/race_car/1.mp4" autoplay loop muted></video>
+        <video src="videos/race_car/2.mp4" autoplay loop muted></video>
+        <video src="videos/race_car/3.mp4" autoplay loop muted></video>
+        <video src="videos/race_car/4.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-container">
+        <video src="videos/raincoat/0.mp4" autoplay loop muted></video>
+        <video src="videos/raincoat/1.mp4" autoplay loop muted></video>
+        <video src="videos/raincoat/2.mp4" autoplay loop muted></video>
+        <video src="videos/raincoat/3.mp4" autoplay loop muted></video>
+        <video src="videos/raincoat/4.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-container">
+        <video src="videos/record_player/0.mp4" autoplay loop muted></video>
+        <video src="videos/record_player/1.mp4" autoplay loop muted></video>
+        <video src="videos/record_player/2.mp4" autoplay loop muted></video>
+        <video src="videos/record_player/3.mp4" autoplay loop muted></video>
+        <video src="videos/record_player/4.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-container">
+        <video src="videos/ring/0.mp4" autoplay loop muted></video>
+        <video src="videos/ring/1.mp4" autoplay loop muted></video>
+        <video src="videos/ring/2.mp4" autoplay loop muted></video>
+        <video src="videos/ring/3.mp4" autoplay loop muted></video>
+        <video src="videos/ring/4.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-container">
+        <video src="videos/shears/0.mp4" autoplay loop muted></video>
+        <video src="videos/shears/1.mp4" autoplay loop muted></video>
+        <video src="videos/shears/2.mp4" autoplay loop muted></video>
+        <video src="videos/shears/3.mp4" autoplay loop muted></video>
+        <video src="videos/shears/4.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-container">
+        <video src="videos/shepherd_dog/0.mp4" autoplay loop muted></video>
+        <video src="videos/shepherd_dog/1.mp4" autoplay loop muted></video>
+        <video src="videos/shepherd_dog/2.mp4" autoplay loop muted></video>
+        <video src="videos/shepherd_dog/3.mp4" autoplay loop muted></video>
+        <video src="videos/shepherd_dog/4.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-container">
+        <video src="videos/shield/0.mp4" autoplay loop muted></video>
+        <video src="videos/shield/1.mp4" autoplay loop muted></video>
+        <video src="videos/shield/2.mp4" autoplay loop muted></video>
+        <video src="videos/shield/3.mp4" autoplay loop muted></video>
+        <video src="videos/shield/4.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-container">
+        <video src="videos/shoe/0.mp4" autoplay loop muted></video>
+        <video src="videos/shoe/1.mp4" autoplay loop muted></video>
+        <video src="videos/shoe/2.mp4" autoplay loop muted></video>
+        <video src="videos/shoe/3.mp4" autoplay loop muted></video>
+        <video src="videos/shoe/4.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-container">
+        <video src="videos/shopping_cart/0.mp4" autoplay loop muted></video>
+        <video src="videos/shopping_cart/1.mp4" autoplay loop muted></video>
+        <video src="videos/shopping_cart/2.mp4" autoplay loop muted></video>
+        <video src="videos/shopping_cart/3.mp4" autoplay loop muted></video>
+        <video src="videos/shopping_cart/4.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-container">
+        <video src="videos/sink/0.mp4" autoplay loop muted></video>
+        <video src="videos/sink/1.mp4" autoplay loop muted></video>
+        <video src="videos/sink/2.mp4" autoplay loop muted></video>
+        <video src="videos/sink/3.mp4" autoplay loop muted></video>
+        <video src="videos/sink/4.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-container">
+        <video src="videos/skateboard/0.mp4" autoplay loop muted></video>
+        <video src="videos/skateboard/1.mp4" autoplay loop muted></video>
+        <video src="videos/skateboard/2.mp4" autoplay loop muted></video>
+        <video src="videos/skateboard/3.mp4" autoplay loop muted></video>
+        <video src="videos/skateboard/4.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-container">
+        <video src="videos/squirrel/0.mp4" autoplay loop muted></video>
+        <video src="videos/squirrel/1.mp4" autoplay loop muted></video>
+        <video src="videos/squirrel/2.mp4" autoplay loop muted></video>
+        <video src="videos/squirrel/3.mp4" autoplay loop muted></video>
+        <video src="videos/squirrel/4.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-container">
+        <video src="videos/tapestry/0.mp4" autoplay loop muted></video>
+        <video src="videos/tapestry/1.mp4" autoplay loop muted></video>
+        <video src="videos/tapestry/2.mp4" autoplay loop muted></video>
+        <video src="videos/tapestry/3.mp4" autoplay loop muted></video>
+        <video src="videos/tapestry/4.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-container">
+        <video src="videos/trailer_truck/0.mp4" autoplay loop muted></video>
+        <video src="videos/trailer_truck/1.mp4" autoplay loop muted></video>
+        <video src="videos/trailer_truck/2.mp4" autoplay loop muted></video>
+        <video src="videos/trailer_truck/3.mp4" autoplay loop muted></video>
+        <video src="videos/trailer_truck/4.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-container">
+        <video src="videos/vodka/0.mp4" autoplay loop muted></video>
+        <video src="videos/vodka/1.mp4" autoplay loop muted></video>
+        <video src="videos/vodka/2.mp4" autoplay loop muted></video>
+        <video src="videos/vodka/3.mp4" autoplay loop muted></video>
+        <video src="videos/vodka/4.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-container">
+        <video src="videos/wall_socket/0.mp4" autoplay loop muted></video>
+        <video src="videos/wall_socket/1.mp4" autoplay loop muted></video>
+        <video src="videos/wall_socket/2.mp4" autoplay loop muted></video>
+        <video src="videos/wall_socket/3.mp4" autoplay loop muted></video>
+        <video src="videos/wall_socket/4.mp4" autoplay loop muted></video>
+    </div>
+
+    <div class="video-container">
+        <video src="videos/rabbit/0.mp4" autoplay loop muted></video>
+        <video src="videos/rabbit/1.mp4" autoplay loop muted></video>
+        <video src="videos/rabbit/2.mp4" autoplay loop muted></video>
+        <video src="videos/rabbit/3.mp4" autoplay loop muted></video>
+        <video src="videos/rabbit/4.mp4" autoplay loop muted></video>
+    </div>
+  </div>
+
+  
+        
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          // 获取所有视频元素
+          const videos = document.querySelectorAll('video');
+
+          // 遍历每个视频并同时播放
+          videos.forEach(video => {
+              video.play();
+          });
+      });
+  </script>
+  <script src="js/yall.js"></script>
+    <script>
+        yall(
+            {
+                observeChanges: true
+            }
+        );
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Import the component -->
+
+</body>
+
+</html>
