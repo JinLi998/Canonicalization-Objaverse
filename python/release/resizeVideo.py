@@ -39,11 +39,13 @@ if __name__ == "__main__":
     # 使用方法，指定文件夹路径
     # directory_path = "E:/projects/Canonicalization-Objaverse/result/alignedCourse/secondBatch_video"
     # resize_videos_in_directory(directory_path)
-    data_root = 'videos/alignedCourse'
+    '''data_root = 'videos/alignedCourse'
     # 用glob获得包括子文件夹中所有的mp4文件
     files = glob(os.path.join(data_root, "**", "*.mp4"), recursive=True)
     # resized_objBeforeAfter  resized_semanticBeforeAfter
-    files = [f for f in files if "resized_objBeforeAfter" in f or "resized_semanticBeforeAfter" in f]
+    files = [f for f in files if "resized_objBeforeAfter" in f or "resized_semanticBeforeAfter" in f]'''
+    data_root = 'videos/alignedObjs'
+    files = glob(os.path.join(data_root, "**", "*.mp4"), recursive=True)
     # 遍历文件
     for file in files:
         # 获取文件名
