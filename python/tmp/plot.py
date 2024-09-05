@@ -174,7 +174,7 @@ def ShowtJittrLagValue():
             plt.scatter(tSmt[i], tLag[i], color=current_color, s=180, label=labels[i])  # 点大小增加
         
         plt.ylabel('Classes', fontsize=18)
-        plt.xlabel('Objects (w)', fontsize=18)
+        plt.xlabel('Objects (10k)', fontsize=18)
         plt.xticks(fontsize=16)
         plt.yticks(fontsize=16)
 
