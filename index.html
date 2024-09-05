@@ -45,13 +45,27 @@
             </h5>
     </div>
     
-
-    <hr class="divider" />
+    <!-- pipeline -->
+    <!-- <hr class="divider" />
     <div class="container" style="max-width: 768px; margin-bottom: 40px;">
-        <!-- 自动的方法 -->
         <div style="text-align: center;">
             <h3><b>Automatic 3D Object Canonicalization Pipeline</b></h3>
             <img src="imgs/method_pipline.png" alt="描述图片" style="width:100%;">
+        </div>
+    </div> -->
+
+    <!-- 和之前数据集的比较 -->
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <!-- 比较 -->
+        <h3 class="center-text"><b>Comparison with the Previous Canonicalization Dataset</b></h3>
+        <h5>
+            The previous canonicalization dataset was manually canonicalized, with each object taking about one minute, which limits the normalization of large-scale 3D data. Our automated canonicalization method addresses this challenge. We completed the canonicalization of the Objaverse-LIVS dataset in one week using six A40 GPUs. In the future, we plan to further process approximately 80w objects from the Objaverse-1.0 dataset.
+        </h5>
+        <div style="text-align: center;">
+            <!-- <img src="imgs/statistics_cates_num_plan.png" alt="描述图片" style="width:100%;"> -->
+            <!-- <img src="imgs/compare.png" alt="描述图片" style="width:100%;"> -->
+            <img src="imgs/class-objects.png" alt="描述图片" style="width:70%;">
         </div>
     </div>
 
@@ -327,8 +341,6 @@
         </div>
     </div>
 
-
-
     <!-- 标注和评估 -->
     <hr class="divider" />
     <div class="container" style="max-width: 768px; margin-bottom: 40px;">
@@ -342,22 +354,7 @@
         </div>
     </div>
 
-    <!-- 和之前数据集的比较 -->
-    <hr class="divider" />
-    <div class="container" style="max-width: 768px;">
-        <!-- 比较 -->
-        <h3 class="center-text"><b>Comparison with the Previous Canonicalization Dataset</b></h3>
-        <h5>
-            The previous canonicalization dataset was manually canonicalized, with each object taking about one minute, which limits the normalization of large-scale 3D data. Our automated canonicalization method addresses this challenge. We completed the canonicalization of the Objaverse-LIVS dataset in one week using six A40 GPUs. In the future, we plan to further process approximately 80w objects from the Objaverse-1.0 dataset.
-          </h5>
-        <div style="text-align: center;">
-            <!-- <img src="imgs/statistics_cates_num_plan.png" alt="描述图片" style="width:100%;"> -->
-            <!-- <img src="imgs/compare.png" alt="描述图片" style="width:100%;"> -->
-            <img src="imgs/class-objects.png" alt="描述图片" style="width:100%;">
-        </div>
-    </div>
-
-
+    
     <script src="https://polyfill.io/v3/polyfill.js?features=IntersectionObserver"></script>
     <script src="js/yall.js"></script>
     <script>
